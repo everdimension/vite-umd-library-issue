@@ -1,0 +1,52 @@
+{
+  "name": "vite-umd-issue",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "source": "./src/index.ts",
+  "types": "lib/index.d.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "require": "./lib/index.cjs",
+      "default": "./lib/index.js"
+    }
+  },
+  "files": [
+    "lib"
+  ],
+  "module": "./lib/index.js",
+  "unpkg": "./lib/index.umd.js",
+  "scripts": {
+    "start": "npm run build && npx http-server",
+    "build": "vite build",
+    "prepack": "npm run build",
+    "pretest": "npm run lint && tsc --noEmit",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --loglevel warn --write \"**/*.{ts,tsx,css,md}\"",
+    "lint": "eslint . --cache --fix --ext .ts,.tsx"
+  },
+  "author": "everdimension <everdimension@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.14",
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/parser": "^5.60.1",
+    "confusing-browser-globals": "^1.0.11",
+    "eslint": "^8.44.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "http-server": "^14.1.1",
+    "prettier": "^2.8.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.11",
+    "vite-plugin-dts": "^3.6.0"
+  }
+}
